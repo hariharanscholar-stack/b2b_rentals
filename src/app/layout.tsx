@@ -34,7 +34,49 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.className} antialiased`}>{children}</body>
+      <body className={`${dmSans.className} antialiased`}>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'B2B Rentals',
+              image: 'https://b2brentals.netlify.app/assets/logo.jpg',
+              '@id': 'https://b2brentals.netlify.app',
+              url: 'https://b2brentals.netlify.app',
+              telephone: '+91-XXXXXXXXXX',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Industrial Zone',
+                addressLocality: 'Chennai',
+                postalCode: '600001',
+                addressRegion: 'Tamil Nadu',
+                addressCountry: 'IN',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 13.0827,
+                longitude: 80.2707,
+              },
+              openingHoursSpecification: {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: [
+                  'Monday',
+                  'Tuesday',
+                  'Wednesday',
+                  'Thursday',
+                  'Friday',
+                  'Saturday',
+                ],
+                opens: '09:00',
+                closes: '18:00',
+              },
+            }),
+          }}
+        />
+      </body>
     </html>
   );
 }

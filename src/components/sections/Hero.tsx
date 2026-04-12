@@ -9,12 +9,13 @@ export default function Hero() {
       
       {/* Absolute Giant Watermark Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 mt-20 opacity-[0.6]">
-        <h1 
+        <div 
+          aria-hidden="true"
           className="font-black text-[#EFEAD4] leading-none tracking-tighter"
           style={{ fontSize: "clamp(120px, 22vw, 400px)" }}
         >
           FORKLIFT
-        </h1>
+        </div>
       </div>
 
       <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 flex-grow pt-8 lg:pt-0">
@@ -65,7 +66,7 @@ export default function Hero() {
             <Image 
               src="/assets/fork_lift_1.png" 
               fill 
-              alt="Godrej Forklift" 
+              alt="Godrej Electric Forklift available for rent at B2B Rentals" 
               className="object-contain drop-shadow-2xl scale-[1.25] lg:scale-[1.1] origin-bottom hover:scale-[1.12] transition-transform duration-700 ease-out" 
               priority 
             />
