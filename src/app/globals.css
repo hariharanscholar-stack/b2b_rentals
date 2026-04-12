@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* B2B Rentals Design Tokens */
+  /* Colors */
+  --primary-yellow: #ffd371;
+  --secondary-dark: #232323;
+  --gray-900: #181d25;
+  --gray-700: #333d4c;
+  --gray-500: #6c727f;
+  --gray-100: #eef1f6;
+  --background-cream: #faf8ed;
+  --background-gray: #f7f7f7;
+  --white: #ffffff;
+  --primary-green: #7fae51;
+  --brand-orange: #f98562;
+  --brand-blue: #368ce1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* B2B Rentals Color System */
+  --color-primary: var(--primary-yellow);
+  --color-secondary: var(--secondary-dark);
+  --color-gray-900: var(--gray-900);
+  --color-gray-700: var(--gray-700);
+  --color-gray-500: var(--gray-500);
+  --color-gray-100: var(--gray-100);
+  --color-cream: var(--background-cream);
+  --color-bg-gray: var(--background-gray);
+  --color-white: var(--white);
+  --color-green: var(--primary-green);
+  --color-orange: var(--brand-orange);
+  --color-blue: var(--brand-blue);
+
+  /* Typography */
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
