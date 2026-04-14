@@ -39,9 +39,9 @@ const Footer: React.FC = () => {
       className="bg-bg-gray w-full py-14 mt-auto"
       data-name="Footer Container"
     >
-      <div className="container mx-auto px-20">
+      <div className="container mx-auto px-6 md:px-20">
         {/* Top Contact Section */}
-        <div className="grid grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <ContactItem
             icon={Phone}
             title="Call Us"
@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
         <hr className="border-t border-gray-300 mb-10" />
 
         {/* Logo & Links Section */}
-        <div className="grid grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Logo & Description */}
           <div>
             <div className="mb-6 relative w-48 h-12">

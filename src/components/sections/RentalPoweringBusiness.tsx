@@ -35,14 +35,14 @@ export default function RentalPoweringBusiness() {
 
   return (
     <section className="bg-[#fdfcf6] py-24 md:py-32 relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center relative z-10">
         
         {/* Left Content */}
         <div className="max-w-[500px]">
-          <h2 className="text-[44px] md:text-[56px] font-medium leading-[1.1] text-[#1a1a1a] mb-6">
+          <h2 className="text-[36px] sm:text-[44px] md:text-[56px] font-medium leading-[1.1] text-[#1a1a1a] mb-6">
             EaaS: Powering Your Business Needs
           </h2>
-          <p className="text-[17px] text-[#4d5666] leading-[1.6] mb-12 max-w-[420px]">
+          <p className="text-[15px] md:text-[17px] text-[#4d5666] leading-[1.6] mb-12 max-w-[420px]">
             Rent and manage all your equipment in one platform - saving time, cutting costs, and boosting efficiency.
           </p>
 
@@ -81,7 +81,7 @@ export default function RentalPoweringBusiness() {
           
           {/* Background Text */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 -z-10 w-full overflow-hidden flex items-center">
-             <span className="text-[160px] md:text-[220px] font-black text-[#f1edd9] leading-none tracking-tighter w-full text-center lg:text-left select-none">
+             <span className="text-[100px] sm:text-[140px] md:text-[160px] lg:text-[220px] font-black text-[#f1edd9] leading-none tracking-tighter w-full text-center lg:text-left select-none">
                {activeTab.bgText}
              </span>
           </div>
@@ -97,8 +97,24 @@ export default function RentalPoweringBusiness() {
             />
           </div>
 
-          {/* Navigation Tabs */}
-          <div className="flex flex-col gap-6 absolute right-0 top-1/2 -translate-y-1/2 z-20">
+          {/* Navigation Tabs - below image on mobile, absolute on desktop */}
+          <div className="flex flex-row flex-wrap gap-3 mt-4 lg:hidden">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 py-2 rounded-full text-[13px] font-semibold border transition-all ${
+                  activeTab.id === tab.id
+                    ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
+                    : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="hidden lg:flex flex-col gap-6 absolute right-0 top-1/2 -translate-y-1/2 z-20">
             {tabs.map((tab) => (
               <button
                 key={tab.id}

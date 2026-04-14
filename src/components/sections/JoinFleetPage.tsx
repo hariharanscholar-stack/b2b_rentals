@@ -188,7 +188,7 @@ export default function JoinFleetPage() {
 
               {activeStep === 1 && (
                 <form onSubmit={handleContinue}>
-                  <div className="space-y-5 pl-[52px]">
+                  <div className="space-y-5 pl-0 sm:pl-[52px]">
                     <div>
                       <label className={labelClass}>
                         Company name <span className="text-red-500">*</span>
@@ -294,7 +294,7 @@ export default function JoinFleetPage() {
 
               {activeStep === 2 && (
                 <form onSubmit={handleContinue}>
-                  <div className="space-y-5 pl-[52px]">
+                  <div className="space-y-5 pl-0 sm:pl-[52px]">
                     <div>
                       <label className={labelClass}>
                         Equipment Type <span className="text-red-500">*</span>
@@ -410,7 +410,7 @@ export default function JoinFleetPage() {
 
               {activeStep === 3 && (
                 <form onSubmit={handleSubmit}>
-                  <div className="space-y-5 pl-[52px]">
+                  <div className="space-y-5 pl-0 sm:pl-[52px]">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className={labelClass}>

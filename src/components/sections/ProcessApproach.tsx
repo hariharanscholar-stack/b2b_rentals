@@ -31,7 +31,7 @@ export default function ProcessApproach() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         
         {/* Top Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12 md:mb-24">
           <div className="max-w-xl">
             <div className="flex items-center gap-2 mb-3">
               <span className="w-3 h-4 bg-[#F8BC45] rounded-tl-md rounded-br-md block border-[1px] border-[#F8BC45]"></span>

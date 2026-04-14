@@ -69,7 +69,7 @@ export default function ContactPage() {
       </div>
 
       {/* Map Section */}
-      <div className="relative w-full h-[500px] bg-gray-100">
+      <div className="relative w-full h-[300px] md:h-[500px] bg-gray-100">
         <iframe
           src="https://maps.google.com/maps?q=12.924268,80.141696&t=&z=15&ie=UTF8&iwloc=&output=embed"
           width="100%"
@@ -81,8 +81,8 @@ export default function ContactPage() {
           className="absolute inset-0"
         ></iframe>
 
-        {/* Floating Info Card */}
-        <div className="absolute left-6 md:left-12 lg:left-32 top-1/2 -translate-y-1/2 bg-[#1A1F2B] text-white p-8 rounded-xl w-80 shadow-2xl z-10">
+        {/* Floating Info Card – desktop only */}
+        <div className="hidden md:block absolute left-6 md:left-12 lg:left-32 top-1/2 -translate-y-1/2 bg-[#1A1F2B] text-white p-8 rounded-xl w-80 shadow-2xl z-10">
           <div className="flex flex-col gap-6">
             <p className="text-[13px] leading-relaxed text-gray-300 font-medium">
               <span className="text-white block mb-0.5 text-[15px]">Kamatchi Nagar, Madambakkam</span>
@@ -104,6 +104,24 @@ export default function ContactPage() {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Info Card – shown below map on small screens */}
+      <div className="md:hidden bg-[#1A1F2B] text-white px-6 py-8 flex flex-col gap-4">
+        <p className="text-[14px] leading-relaxed text-gray-300">
+          <span className="text-white block mb-0.5 text-[15px] font-semibold">Kamatchi Nagar, Madambakkam</span>
+          Chennai 600126
+        </p>
+        <p className="text-[15px] font-medium">+91 99445 66447</p>
+        <p className="text-[15px] font-medium">sales@b2brentals.in</p>
+        <a 
+          href="https://www.google.com/maps/dir/?api=1&destination=12.924268,80.141696"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border border-gray-600 hover:border-gray-400 py-3 text-xs font-semibold tracking-wide rounded-lg text-center block"
+        >
+          GET DIRECTION
+        </a>
       </div>
 
       {/* Form Section */}

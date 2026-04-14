@@ -91,7 +91,7 @@ export default function ProductDetails({ id }: { id: string }) {
       
       {/* Top Carousel section */}
       <section className="bg-white border-b border-gray-100 py-8">
-        <div className="max-w-7xl mx-auto px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">Select your rental equipment</h2>
           
           <div className="relative flex items-center justify-center group">
@@ -134,12 +134,12 @@ export default function ProductDetails({ id }: { id: string }) {
       </section>
 
       {/* Main Product Section */}
-      <section className="max-w-7xl mx-auto px-8 py-16">
-        <div className="flex flex-col lg:flex-row gap-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 py-12 md:py-16">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           
           {/* Left: Product Image */}
           <div className="lg:w-3/5 flex-shrink-0">
-            <div className="bg-[#f0f1f2] rounded-3xl w-full aspect-square flex items-center justify-center p-12">
+            <div className="bg-[#f0f1f2] rounded-3xl w-full aspect-square flex items-center justify-center p-6 md:p-12">
               <div className="relative w-full h-full transform hover:scale-105 transition-transform duration-500">
                 <Image
                   src={product.image}
@@ -157,7 +157,7 @@ export default function ProductDetails({ id }: { id: string }) {
             <span className="text-gray-500 text-[13px] font-semibold tracking-wide mb-2 uppercase">
               {product.category}
             </span>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
               {product.name}
             </h1>
             
@@ -291,7 +291,7 @@ export default function ProductDetails({ id }: { id: string }) {
       </section>
 
       {/* Similar Products Section */}
-      <section className="max-w-7xl mx-auto px-8 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 py-12 md:py-16">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-[28px] font-bold text-gray-900">Similar Products</h2>
           <div className="flex items-center gap-3">

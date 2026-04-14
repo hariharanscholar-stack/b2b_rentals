@@ -215,7 +215,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-[40%_1fr] gap-12 lg:gap-24 items-start">
             {/* Left */}
             <div className="relative">
-              <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-bold leading-[1.15] text-[#111] max-w-sm mb-12">
+              <h2 className="text-3xl sm:text-[40px] md:text-[48px] lg:text-[56px] font-bold leading-[1.15] text-[#111] max-w-sm mb-12">
                 Message from
                 <br />
                 the Founder &

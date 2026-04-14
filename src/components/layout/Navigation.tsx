@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, Search, X, ArrowUpRight } from "lucide-react";
+import { ChevronDown, Search, X, ArrowUpRight, Menu } from "lucide-react";
 import { products } from "../../data/products";
 
 // Mega menu data
@@ -36,6 +36,8 @@ const Navigation: React.FC = () => {
   const router = useRouter();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileRentalOpen, setIsMobileRentalOpen] = useState(false);
 
   const popularSearches = [
     "Diesel Forklift",
@@ -63,12 +65,12 @@ const Navigation: React.FC = () => {
   return (
     <>
     <nav
-      className="bg-primary h-20 w-full px-12 flex items-center justify-between relative z-40"
+      className="bg-primary h-16 md:h-20 w-full px-4 md:px-12 flex items-center justify-between relative z-40"
       data-name="Menu Navigation"
     >
       {/* Logo */}
       <div className="flex items-center">
-        <div className="relative w-48 h-12">
+        <div className="relative w-36 md:w-48 h-10 md:h-12">
           <Image
             src="/assets/logo-1.svg"
             alt="B2B Rentals"
@@ -79,8 +81,8 @@ const Navigation: React.FC = () => {
         </div>
       </div>
 
-      {/* Navigation Items & CTA */}
-      <div className="flex items-center gap-8">
+      {/* Desktop Navigation Items & CTA */}
+      <div className="hidden md:flex items-center gap-8">
         {/* Menu Items */}
         <div className="flex items-center gap-8">
           <div className="group">
@@ -151,7 +153,70 @@ const Navigation: React.FC = () => {
           Enquiry Now
         </Link>
       </div>
+
+      {/* Mobile: Search + Hamburger */}
+      <div className="flex md:hidden items-center gap-3">
+        <button
+          onClick={() => setIsSearchOpen(true)}
+          className="p-2 text-gray-900"
+          aria-label="Search"
+        >
+          <Search className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="p-2 text-gray-900"
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
     </nav>
+
+    {/* Mobile Menu Drawer */}
+    {isMobileMenuOpen && (
+      <div className="md:hidden fixed inset-0 top-16 bg-white z-50 overflow-y-auto">
+        <div className="flex flex-col px-6 py-6 gap-1">
+          {/* Rental with accordion */}
+          <div>
+            <button
+              onClick={() => setIsMobileRentalOpen(!isMobileRentalOpen)}
+              className="flex items-center justify-between w-full py-3 text-base font-semibold text-gray-900 border-b border-gray-100"
+            >
+              <Link href="/rental" onClick={() => setIsMobileMenuOpen(false)}>Rental</Link>
+              <ChevronDown className={`w-5 h-5 transition-transform ${isMobileRentalOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {isMobileRentalOpen && (
+              <div className="pt-3 pb-4 flex flex-col gap-4">
+                {rentalCategories.map((cat, idx) => (
+                  <div key={idx}>
+                    <p className="text-[11px] font-bold tracking-widest text-[#937ada] uppercase mb-2">{cat.title}</p>
+                    <div className="flex flex-col gap-2">
+                      {cat.items.map((item, idxi) => (
+                        <Link
+                          key={idxi}
+                          href="/rental"
+                          className="text-[14px] text-gray-700 py-1"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="py-3 text-base font-semibold text-gray-900 border-b border-gray-100">About</Link>
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="py-3 text-base font-semibold text-gray-900 border-b border-gray-100">Contact</Link>
+          <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="mt-6 bg-gray-900 text-white text-center px-5 py-3 rounded-xl text-sm font-semibold">
+            Enquiry Now
+          </Link>
+        </div>
+      </div>
+    )}
 
     {/* Search Overlay */}
     {isSearchOpen && (
@@ -174,7 +239,7 @@ const Navigation: React.FC = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Enter your search term"
-              className="w-full text-[40px] font-normal text-gray-900 placeholder-gray-300 border-b border-gray-400 pb-4 focus:outline-none focus:border-gray-900 pr-16 bg-transparent"
+              className="w-full text-2xl md:text-[40px] font-normal text-gray-900 placeholder-gray-300 border-b border-gray-400 pb-4 focus:outline-none focus:border-gray-900 pr-16 bg-transparent"
             />
             <div className="absolute right-0 bottom-6 flex gap-4 text-gray-900">
                {searchTerm && (

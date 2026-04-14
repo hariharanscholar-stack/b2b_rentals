@@ -184,7 +184,7 @@ function SearchResultsContent() {
 
   return (
     <div className="min-h-screen bg-[#f9f9f9]">
-      <section className="max-w-7xl mx-auto px-8 py-10 relative">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 py-10 relative">
         <div className="flex items-center gap-2 text-gray-500 text-[13px] font-medium mb-10">
           <Link href="/" className="hover:text-gray-900 transition-colors">Home</Link>
           <span>›</span>
@@ -197,7 +197,7 @@ function SearchResultsContent() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Enter your search term"
-              className="w-full text-[40px] font-normal text-gray-900 border-b border-gray-400 pb-4 focus:outline-none focus:border-gray-900 pr-16 bg-transparent"
+              className="w-full text-2xl md:text-[40px] font-normal text-gray-900 border-b border-gray-400 pb-4 focus:outline-none focus:border-gray-900 pr-16 bg-transparent"
             />
             <div className="absolute right-0 bottom-6 flex gap-4 text-gray-900">
                {searchTerm && (

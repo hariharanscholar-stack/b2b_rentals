@@ -5,7 +5,7 @@ import { ArrowUp } from "lucide-react";
 
 export default function Hero() {
   return (
-    <div className="bg-[#FCFAF2] min-h-[90vh] pt-12 overflow-hidden relative border-t-2 border-white flex flex-col justify-center">
+    <div className="bg-[#FCFAF2] min-h-[80vh] md:min-h-[90vh] pt-12 overflow-hidden relative border-t-2 border-white flex flex-col justify-center">
       
       {/* Absolute Giant Watermark Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 mt-20 opacity-[0.6]">
@@ -18,11 +18,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 flex-grow pt-8 lg:pt-0">
+      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10 flex-grow pt-8 lg:pt-0 overflow-hidden">
         
         {/* Left Column: Headings & Buttons */}
-        <div className="lg:col-span-4 flex flex-col gap-5 pt-10">
-          <h1 className="text-5xl md:text-6xl lg:text-[64px] font-medium tracking-tight text-[#1A1F2B] leading-[1.05]">
+        <div className="lg:col-span-4 flex flex-col gap-5 pt-8 lg:pt-10 relative z-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-medium tracking-tight text-[#1A1F2B] leading-[1.05]">
             Simplifying<br />Industrial Rentals
           </h1>
           
@@ -60,8 +60,8 @@ export default function Hero() {
         </div>
 
         {/* Center: Hero Image */}
-        <div className="lg:col-span-5 relative mt-16 lg:mt-0 flex justify-center items-end lg:-translate-x-8 z-20 lg:-mr-12">
-          <div className="relative w-[340px] h-[340px] md:w-[500px] md:h-[500px] lg:w-[680px] lg:h-[680px]">
+        <div className="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center items-end lg:-translate-x-8 z-20 lg:-mr-12">
+          <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[500px] md:h-[500px] lg:w-[680px] lg:h-[680px]">  
             {/* The provided design features the Godrej forklift. using fork_lift_1.png as the stand-in */}
             <Image 
               src="/assets/fork_lift_1.png" 
@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
 
         {/* Right Column: Menu List */}
-        <div className="lg:col-span-3 flex justify-start lg:justify-end mt-12 lg:mt-0 z-30 lg:-translate-y-12">
+        <div className="hidden lg:flex lg:col-span-3 justify-start lg:justify-end mt-12 lg:mt-0 z-30 lg:-translate-y-12">
           <ul className="flex flex-col gap-[22px] text-[13px] font-bold w-48">
              <li className="flex items-center gap-4 text-gray-900 leading-none relative group cursor-pointer">
                {/* Active indicator line */}

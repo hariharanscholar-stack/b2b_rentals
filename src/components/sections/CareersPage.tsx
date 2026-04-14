@@ -38,7 +38,7 @@ const positions = [
 export default function CareersPage() {
   return (
     <div className="min-h-screen bg-[#f9f9f9] pb-24">
-      <section className="max-w-[1440px] mx-auto px-8 py-10 relative">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-8 py-10 relative">
         {/* Breadcrumb */}
         <div className="flex items-center justify-center gap-2 text-gray-500 text-[13px] font-medium mb-10 mt-12">
           <Link href="/" className="hover:text-gray-900 transition-colors tracking-wide">Home</Link>
@@ -48,20 +48,20 @@ export default function CareersPage() {
 
         {/* Heading & Subtitle */}
         <div className="text-center mb-16">
-          <h1 className="text-[40px] md:text-[48px] font-bold text-gray-900 mb-6">Careers</h1>
+          <h1 className="text-[36px] sm:text-[40px] md:text-[48px] font-bold text-gray-900 mb-6">Careers</h1>
           <p className="text-[#4d5666] text-[15px] leading-[1.8] max-w-3xl mx-auto">
             Join B2B Rentals to innovate and lead in the sector, where we foster a culture of growth and collaboration, offering cutting-edge projects and comprehensive benefits in a dynamic, inclusive environment
           </p>
         </div>
 
-        {/* Hero Image - Preserving natural aspect ratio to prevent cropping */}
-        <div className="w-full relative -mx-8 sm:mx-0 sm:w-full overflow-hidden mt-6">
+        {/* Hero Image */}
+        <div className="w-full relative overflow-hidden mt-6">
           <Image 
             src="/assets/careers.png" 
             alt="Join Our Team" 
             width={1440}
             height={600}
-            className="w-full h-auto object-contain sm:object-cover"
+            className="w-full h-auto object-contain"
             priority
           />
         </div>

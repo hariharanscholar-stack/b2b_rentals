@@ -197,7 +197,7 @@ export default function RentalPage() {
            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 py-20 flex flex-col items-center justify-center text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-20 flex flex-col items-center justify-center text-center">
           {/* Breadcrumbs */}
           <div className="flex items-center gap-2 text-white/90 text-sm font-medium mb-6">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -229,7 +229,7 @@ export default function RentalPage() {
       </section>
 
       {/* Main Content Area */}
-      <section className="max-w-7xl mx-auto px-8 py-16 relative">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 py-16 relative">
         {/* Top Bar: Filters and Sort */}
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 border-b border-gray-100 pb-6 gap-4">
           <div className="flex items-center gap-6">

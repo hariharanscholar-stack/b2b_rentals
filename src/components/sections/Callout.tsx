@@ -21,7 +21,7 @@ export default function Callout() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <h1 className="text-6xl font-medium text-gray-900 leading-normal tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium text-gray-900 leading-normal tracking-tight">
               Simplifying <br />
               Industrial Rentals
             </h1>
@@ -67,7 +67,7 @@ export default function Callout() {
           {/* Right Content - Forklift Image & Product List */}
           <div className="relative">
             {/* Forklift Image */}
-            <div className="relative w-full aspect-590/434 rounded-2xl overflow-hidden">
+            <div className="relative w-full aspect-[590/434] rounded-2xl overflow-hidden">
               <Image
                 src="/assets/fork_lift_1.png"
                 alt="Godrej Electric Forklift"
@@ -77,8 +77,8 @@ export default function Callout() {
               />
             </div>
 
-            {/* Product List - Positioned on the right side */}
-            <div className="absolute right-0 top-12">
+            {/* Product List - hidden on mobile, absolute on desktop */}
+            <div className="hidden md:block absolute right-0 top-12">
               {products.map((product) => (
                 <ProductItem
                   key={product.id}
