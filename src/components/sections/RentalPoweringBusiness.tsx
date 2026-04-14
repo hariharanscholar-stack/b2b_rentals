@@ -6,7 +6,7 @@ import Image from "next/image";
 const tabs = [
   {
     id: "01",
-    label: "Desel Forklift",
+    label: "Diesel Forklift",
     image: "/assets/Diesel_forklift.png",
     bgText: "DIESEL",
   },
