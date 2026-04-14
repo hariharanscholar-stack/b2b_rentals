@@ -2,10 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
-import { baseProducts } from '@/data/products';
+import prisma from '@/lib/prisma';
 
-export default function PopularEquipment() {
-  const trendingProducts = baseProducts.slice(0, 4);
+export default async function PopularEquipment() {
+  const trendingProducts = await prisma.product.findMany({
+    take: 4,
+    orderBy: {
+      productId: 'asc'
+    }
+  });
 
   return (
     <div className="w-full bg-white py-12 md:py-20">
@@ -57,7 +62,7 @@ export default function PopularEquipment() {
                 <div className="absolute -bottom-1 -right-1 w-20 h-20 bg-white rounded-tl-[32px] z-10 flex items-end justify-end p-2">
                    {/* Yellow Navigation Button nested precisely inside the mask */}
                    <Link 
-                     href="/request-quote" 
+                     href={`/rental/${product.id}`}
                      className="w-[42px] h-[42px] rounded-full bg-[#F8BC45] hover:bg-[#EFAF32] transition-colors flex items-center justify-center shadow-[0_4px_12px_rgba(248,188,69,0.35)]"
                    >
                      <ArrowUpRight className="w-5 h-5 text-gray-900" strokeWidth={2.5} />

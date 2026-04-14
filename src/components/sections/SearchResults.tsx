@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Filter, ChevronDown, ChevronUp, ArrowUpRight, ArrowUp, X, Check, Search } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
-import { products } from "../../data/products";
 
 type FilterOption = {
   label: string;
@@ -74,7 +73,8 @@ const filterConfig: FilterSection[] = [
   }
 ];
 
-function SearchResultsContent() {
+function SearchResultsContent({ allProducts = [] }: { allProducts?: any[] }) {
+  const products = allProducts;
   const searchParams = useSearchParams();
   const router = useRouter();
   const initialQuery = searchParams.get('q') || '';
@@ -393,10 +393,10 @@ function SearchResultsContent() {
   );
 }
 
-export default function SearchResults() {
+export default function SearchResults({ allProducts = [] }: { allProducts?: any[] }) {
   return (
     <Suspense fallback={<div className="min-h-screen bg-[#f9f9f9] flex items-center justify-center">Loading...</div>}>
-      <SearchResultsContent />
+      <SearchResultsContent allProducts={allProducts} />
     </Suspense>
   );
 }

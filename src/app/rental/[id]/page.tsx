@@ -1,11 +1,13 @@
 import MainLayout from "@/components/layout/MainLayout";
 import ProductDetails from "@/components/sections/ProductDetails";
-import { allProducts } from "@/data/products";
+import prisma from "@/lib/prisma";
 import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const product = allProducts.find((p) => p.id.toString() === resolvedParams.id);
+  const product = await prisma.product.findUnique({
+    where: { id: resolvedParams.id }
+  });
 
   if (!product) {
     return {
@@ -21,7 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
-  const product = allProducts.find((p) => p.id.toString() === resolvedParams.id);
+  const product = await prisma.product.findUnique({
+    where: { id: resolvedParams.id }
+  });
 
   if (!product) {
     return (
@@ -55,13 +59,15 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     }
   };
 
+  const allProducts = await prisma.product.findMany({ take: 15 });
+
   return (
     <MainLayout>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProductDetails id={resolvedParams.id} />
+      <ProductDetails initialProduct={product} allProducts={allProducts} />
     </MainLayout>
   );
 }

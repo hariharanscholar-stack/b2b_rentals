@@ -16,76 +16,77 @@ const categories = [
   "POWER TOOLS",
 ];
 
-import { products } from "../../data/products";
-
-type FilterOption = {
-  label: string;
-  count?: number;
-};
-
-type FilterSection = {
+type Product = {
   id: string;
-  title: string;
-  options: FilterOption[];
+  name: string;
+  category: string;
+  image: string;
+  isNew: boolean;
+  brand?: string | null;
+  power?: string | null;
+  capacity?: string | null;
+  availability?: string | null;
+  description?: string | null;
 };
 
-const filterConfig: FilterSection[] = [
-  {
-    id: "availability",
-    title: "Availability",
-    options: [
-      { label: "In stock" },
-      { label: "Out of Stock" }
-    ]
-  },
-  {
-    id: "brands",
-    title: "Brands",
-    options: [
-      { label: "Godrej", count: 24 },
-      { label: "Toyota", count: 12 },
-      { label: "IPC", count: 85 },
-      { label: "Tennant", count: 32 },
-      { label: "Hilti", count: 32 }
-    ]
-  },
-  {
-    id: "capacity",
-    title: "Capacity",
-    options: [
-      { label: "1 Tonne" },
-      { label: "1.2 Tonne" },
-      { label: "1.25 Tonne" },
-      { label: "1.4 Tonne" },
-      { label: "1.5 Tonne" },
-      { label: "1.6 Tonne" }
-    ]
-  },
-  {
-    id: "power",
-    title: "Power",
-    options: [
-      { label: "Diesel" },
-      { label: "Electric" },
-      { label: "Manual" },
-      { label: "Semi-Electric" }
-    ]
-  },
-  {
-    id: "maxForkHeight",
-    title: "Max. Fork Height",
-    options: [
-      { label: "3M" },
-      { label: "3.3M" },
-      { label: "3.6M" },
-      { label: "4M" },
-      { label: "4.5M" },
-      { label: "5.5M" }
-    ]
-  }
-];
+export default function RentalPage({ initialProducts = [] }: { initialProducts?: Product[] }) {
+  const products = initialProducts;
 
-export default function RentalPage() {
+  const filterConfig = [
+    {
+      id: "availability",
+      title: "Availability",
+      options: [
+        { label: "In stock" },
+        { label: "Out of Stock" }
+      ]
+    },
+    {
+      id: "brands",
+      title: "Brands",
+      options: [
+        { label: "Godrej", count: 24 },
+        { label: "Toyota", count: 12 },
+        { label: "IPC", count: 85 },
+        { label: "Tennant", count: 32 },
+        { label: "Hilti", count: 32 }
+      ]
+    },
+    {
+      id: "capacity",
+      title: "Capacity",
+      options: [
+        { label: "1 Tonne" },
+        { label: "1.2 Tonne" },
+        { label: "1.25 Tonne" },
+        { label: "1.4 Tonne" },
+        { label: "1.5 Tonne" },
+        { label: "1.6 Tonne" }
+      ]
+    },
+    {
+      id: "power",
+      title: "Power",
+      options: [
+        { label: "Diesel" },
+        { label: "Electric" },
+        { label: "Manual" },
+        { label: "Semi-Electric" }
+      ]
+    },
+    {
+      id: "maxForkHeight",
+      title: "Max. Fork Height",
+      options: [
+        { label: "3M" },
+        { label: "3.3M" },
+        { label: "3.6M" },
+        { label: "4M" },
+        { label: "4.5M" },
+        { label: "5.5M" }
+      ]
+    }
+  ];
   const router = useRouter();
   const [activeCategory, setActiveCategory] = useState("All");
   const [showScroll, setShowScroll] = useState(false);

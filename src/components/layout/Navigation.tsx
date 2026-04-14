@@ -5,7 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, Search, X, ArrowUpRight, Menu } from "lucide-react";
-import { products } from "../../data/products";
+
+type ProductSuggestion = {
+  id: string;
+  name: string;
+  category: string;
+};
 
 // Mega menu data
 const rentalCategories = [
@@ -32,12 +37,28 @@ const rentalCategories = [
 ];
 
 const Navigation: React.FC = () => {
+  const [products, setProducts] = useState<ProductSuggestion[]>([]);
   const pathname = usePathname();
   const router = useRouter();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileRentalOpen, setIsMobileRentalOpen] = useState(false);
+
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/search/suggestions');
+        if (response.ok) {
+          const data = await response.json();
+          setProducts(data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch search suggestions", err);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   const popularSearches = [
     "Diesel Forklift",

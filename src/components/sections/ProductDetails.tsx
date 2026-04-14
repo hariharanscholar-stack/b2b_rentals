@@ -5,11 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, CheckCircle2, ChevronDown, ChevronUp, ArrowUpRight, X, Check } from "lucide-react";
-import { products, allProducts } from "@/data/products";
-
-export default function ProductDetails({ id }: { id: string }) {
-  const productId = parseInt(id, 10);
-  const product = allProducts.find(p => p.id === productId) || products.find(p => p.id === productId);
+export default function ProductDetails({ initialProduct, allProducts = [] }: { initialProduct: any, allProducts?: any[] }) {
+  const product = initialProduct;
 
   const [activeTonnage, setActiveTonnage] = useState<number | undefined>(product?.tonnages?.[0]);
   const [activePower, setActivePower] = useState<string | undefined>(product?.powers?.[0]);
