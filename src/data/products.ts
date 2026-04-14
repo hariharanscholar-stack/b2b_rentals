@@ -258,14 +258,204 @@ export const baseProducts: ProductType[] = [
       "Wheel Material": "PU / Nylon",
       "Fork Length": "1150 mm"
     }
+  },
+  {
+    id: 9,
+    name: "Toyota 8 series 1.0t Reach truck",
+    category: "MATERIAL HANDLING",
+    image: "/assets/toyota_8_series_1t.png",
+    isNew: true,
+    brand: "Toyota",
+    power: "Electric",
+    capacity: "1.0 Tonne",
+    availability: "In stock",
+    description: "Model 8FBR10. Compact reach truck providing long hours of operation, safe warehouse navigation, and easy maintenance.",
+    features: [
+      "Long operating time with efficient power management",
+      "Excellent visibility for safe indoor operations",
+      "Operator-friendly ergonomic cabin",
+      "Easy maintenance access for downtime reduction",
+      "Outstanding stability during turns and load handling"
+    ],
+    additionalInfo: {
+      "Model": "8FBR10",
+      "Load Capacity": "1000 kg",
+      "Lift Height": "6000 mm",
+      "Usage Intensity": "Medium-High",
+      "Transport Distance": "Medium",
+      "Suitable Areas": "Warehouses",
+      "Operator Position": "Standing",
+      "Travel Speed (no load)": "10.5 km/h",
+      "Power Type": "Lead acid / Li-ion"
+    }
+  },
+  {
+    id: 10,
+    name: "Toyota High Capacity Deep-Reach truck, 1.45t",
+    category: "MATERIAL HANDLING",
+    image: "/assets/toyota_1.45t_reach.png",
+    isNew: true,
+    brand: "Toyota",
+    power: "Electric",
+    capacity: "1.45 Tonne",
+    availability: "In stock",
+    description: "Model 7520-DR32. Offers highest lift heights and fastest cycle times, providing greater capacity retention.",
+    features: [
+      "Pantograph type deep-reach functionality for double-deep racking",
+      "Higher residual capacity in second pallet position",
+      "Good visibility with open view mast design",
+      "Multifunction color touchscreen display for real-time analytics"
+    ],
+    additionalInfo: {
+      "Model": "7520-DR32",
+      "Load Capacity": "1451 kg",
+      "Lift Height": "11277 mm",
+      "Usage Intensity": "High",
+      "Transport Distance": "Medium-Long",
+      "Suitable Areas": "Warehouses",
+      "Operator Position": "Standing",
+      "Travel Speed (no load)": "12.8 km/h",
+      "Power Type": "Lead acid"
+    }
+  },
+  {
+    id: 11,
+    name: "Godrej GX Series Diesel Forklift",
+    category: "MATERIAL HANDLING",
+    image: "/assets/godrej_gx.png",
+    isNew: false,
+    brand: "Godrej",
+    power: "Diesel",
+    capacity: "1.5-3 Tonne",
+    availability: "In stock",
+    description: "Rugged and reliable diesel forklift built for demanding outdoor industrial applications.",
+    features: [
+      "High performance fuel-efficient industrial diesel engine",
+      "Clear view mast for enhanced forward visibility",
+      "Ergonomically designed adjustable suspension seat",
+      "Hydraulic power steering for fatigue-free operation",
+      "Heavy-duty axle for superior load stability"
+    ],
+    additionalInfo: {
+      "Brand": "Godrej",
+      "Capacity": "1500 kg - 3000 kg",
+      "Lift Height": "3000 mm - 6000 mm",
+      "Fuel Type": "Diesel",
+      "Usage": "Outdoor / Heavy Industrial",
+      "Transmission": "Automatic / Fluid Drive"
+    }
+  },
+  {
+    id: 12,
+    name: "Crown FC 5700 Electric Forklift",
+    category: "MATERIAL HANDLING",
+    image: "/assets/crown_fc_5700.png",
+    isNew: false,
+    brand: "Crown",
+    power: "Electric",
+    capacity: "2-3 Tonne",
+    availability: "In stock",
+    description: "Model FC 5700. Intrinsically stable design with superior visibility and multi-shift performance.",
+    features: [
+      "Advanced AC motors for higher travel and lift speeds",
+      "Access 1 2 3 comprehensive system control",
+      "Intrinsic Stability System™ features for added safety",
+      "Flexible battery options for multi-shift operations",
+      "Power steering for effortless maneuverability"
+    ],
+    additionalInfo: {
+      "Brand": "Crown",
+      "Model": "FC 5700",
+      "Capacity": "2000 kg - 3000 kg",
+      "Voltage": "36V / 48V",
+      "Tires": "Solid Cushion",
+      "Fuel Type": "Electric"
+    }
+  },
+  {
+    id: 13,
+    name: "Godrej Bravo Electric Forklift",
+    category: "MATERIAL HANDLING",
+    image: "/assets/godrej_bravo.png",
+    isNew: true,
+    brand: "Godrej",
+    power: "Electric",
+    capacity: "1.5 Tonne",
+    availability: "In stock",
+    description: "Eco-friendly, compact electric forklift designed for indoor warehousing and manufacturing units.",
+    features: [
+      "Zero emission operation, eco-friendly",
+      "Twin motor front drive for maximum agility",
+      "Regenerative braking for increased shift life",
+      "Digital display with real-time diagnostics",
+      "Maintenance-free oil-immersed disc brakes"
+    ],
+    additionalInfo: {
+      "Brand": "Godrej",
+      "Series": "Bravo",
+      "Capacity": "1.5 Tonne",
+      "Battery Type": "Lead Acid / Li-ion",
+      "Lift Height": "Up to 6000 mm",
+      "Usage": "Indoor Warehouse"
+    }
+  },
+  {
+    id: 14,
+    name: "Flipper+ Walk Behind Sweeper",
+    category: "FACILITY MANAGEMENT",
+    image: "/assets/roots_flipperplus.png",
+    isNew: false,
+    brand: "Roots",
+    power: "Manual",
+    capacity: "Mini",
+    availability: "In stock",
+    description: "Extremely maneuverable manual sweeper with small capacity hopper, easy to operate in tight spaces.",
+    features: [
+      "Robust anti-shock frame with high durability",
+      "Simple push-behind mechanism with no cables",
+      "Excellent cleaning on small to medium-sized areas",
+      "Easy to empty hopper for efficient waste disposal",
+      "Compact design for convenient storage"
+    ],
+    additionalInfo: {
+      "Brand": "Roots",
+      "Model": "Flipper+",
+      "Sweeping Type": "Manual / Walk-behind",
+      "Sweeping Width": "650 mm",
+      "Application": "Small areas / Footfall zones"
+    }
+  },
+  {
+    id: 15,
+    name: "Roots Sweep B70 Walk Behind Sweeper",
+    category: "FACILITY MANAGEMENT",
+    image: "/assets/roots_sweepb70.png",
+    isNew: false,
+    brand: "Roots",
+    power: "Electric",
+    capacity: "Medium",
+    availability: "In stock",
+    description: "Battery-operated, traction-enabled sweeper providing excellent cleaning performance on various floor types.",
+    features: [
+      "High productivity for large indoor and outdoor areas",
+      "Battery operated with easy recharging",
+      "Quiet operation suitable for malls and hospitals",
+      "Efficient filtration system for dust-free sweeping",
+      "Robust brush system for deep cleaning"
+    ],
+    additionalInfo: {
+      "Brand": "Roots",
+      "Model": "Sweep B70",
+      "Power Source": "Battery 24V",
+      "Traction": "Self-propelled",
+      "Sweeping Width": "700 mm",
+      "Application": "Industries / Commercial complexes"
+    }
   }
 ];
 
 // Combine the base products
-// We'll generate an extended array just to have a decent number of products for the main rental grid
-export const products: ProductType[] = Array.from({ length: 4 }).flatMap((_, i) =>
-  baseProducts.slice(0, 4).map((p) => ({ ...p, id: i * 4 + p.id }))
-);
+export const products: ProductType[] = baseProducts;
 
 // We need a specific array for the new full list
 export const allProducts: ProductType[] = baseProducts;
