@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import prisma from '@/lib/prisma';
 
 export async function POST(req: Request) {
   try {
@@ -62,6 +63,21 @@ export async function POST(req: Request) {
         <p>${data.enquiry.replace(/\n/g, '<br>')}</p>
       `
     };
+
+    // 1. Save to Database
+    const submission = await prisma.contactSubmission.create({
+      data: {
+        fullName: data.fullName,
+        email: data.email,
+        phone: data.phone,
+        region: data.region,
+        company: data.company,
+        industry: data.industry,
+        enquiry: data.enquiry,
+      },
+    });
+
+    console.log(`[DB]: Saved contact enquiry from ${data.fullName} with ID: ${submission.id}`);
 
     const info = await transporter.sendMail(mailOptions);
 

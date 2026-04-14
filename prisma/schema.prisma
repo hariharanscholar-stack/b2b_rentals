@@ -30,25 +30,43 @@ model Product {
 }
 
 model Quote {
-  id        String   @id @default(cuid())
-  name      String
-  email     String
-  company   String?
-  phone     String?
-  equipment String
-  message   String?
-  status    String   @default("PENDING") // PENDING, CONTACTED, CLOSED
-  createdAt DateTime @default(now())
+  id           String   @id @default(cuid())
+  firstName    String
+  lastName     String
+  email        String
+  mobile       String
+  organisation String?
+  jobFunction  String?
+  city         String?
+  pinCode      String?
+  productName  String
+  tonnage      String?
+  message      String?
+  status       String   @default("PENDING") // PENDING, CONTACTED, CLOSED
+  createdAt    DateTime @default(now())
 }
 
 model CareerApplication {
+  id         String   @id @default(cuid())
+  fullName   String
+  email      String
+  phone      String
+  region     String?
+  experience String?
+  position   String?
+  resumeLink String?
+  status     String   @default("NEW") // NEW, REVIEWING, INTERVIEWING, REJECTED, HIRED
+  createdAt  DateTime @default(now())
+}
+
+model ContactSubmission {
   id        String   @id @default(cuid())
-  name      String
+  fullName  String
   email     String
   phone     String
-  position  String
-  experience String?
-  resumeLink String?
-  status    String   @default("NEW") // NEW, REVIEWING, INTERVIEWING, REJECTED, HIRED
+  region    String?
+  company   String?
+  industry  String?
+  enquiry   String
   createdAt DateTime @default(now())
 }

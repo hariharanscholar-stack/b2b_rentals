@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import prisma from '@/lib/prisma';
 
 export async function POST(req: Request) {
   try {
@@ -69,6 +70,20 @@ export async function POST(req: Request) {
       `,
       attachments
     };
+
+    // 1. Save to Database
+    const application = await prisma.careerApplication.create({
+      data: {
+        fullName: fullName,
+        email: email,
+        phone: phone,
+        region: region,
+        resumeLink: file ? file.name : null, // Storing the filename for now
+        status: 'NEW',
+      },
+    });
+
+    console.log(`[DB]: Saved career application from ${fullName} with ID: ${application.id}`);
 
     const info = await transporter.sendMail(mailOptions);
 

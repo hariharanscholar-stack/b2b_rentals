@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import prisma from '@/lib/prisma';
 
 export async function POST(req: Request) {
   try {
@@ -86,6 +87,25 @@ export async function POST(req: Request) {
         <p>Best regards,<br/>The B2B Rentals Team</p>
       `
     };
+
+    // 1. Save to Database
+    const quote = await prisma.quote.create({
+      data: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        mobile: data.mobile,
+        organisation: data.organisation,
+        jobFunction: data.jobFunction,
+        city: data.city,
+        pinCode: data.pinCode,
+        productName: data.productName,
+        tonnage: data.tonnage,
+        message: data.message,
+      },
+    });
+
+    console.log(`[DB]: Saved quote request from ${data.firstName} with ID: ${quote.id}`);
 
     const infoSales = await transporter.sendMail(mailOptions);
     const infoCustomer = await transporter.sendMail(customerMailOptions);
