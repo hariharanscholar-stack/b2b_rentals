@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id             String   @id @default(cuid())
+  productId      Int      @unique
+  name           String
+  category       String
+  image          String
+  isNew          Boolean  @default(false)
+  brand          String?
+  power          String?
+  capacity       String?
+  availability   String?  @default("In stock")
+  description    String?
+  tonnages       Float[]
+  powers         String[]
+  features       String[]
+  additionalInfo Json?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([category])
+  @@index([brand])
+}
+
+model Quote {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  phone     String?
+  equipment String
+  message   String?
+  status    String   @default("PENDING") // PENDING, CONTACTED, CLOSED
+  createdAt DateTime @default(now())
+}
+
+model CareerApplication {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  position  String
+  experience String?
+  resumeLink String?
+  status    String   @default("NEW") // NEW, REVIEWING, INTERVIEWING, REJECTED, HIRED
+  createdAt DateTime @default(now())
+}
