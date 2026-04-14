@@ -77,11 +77,11 @@ export default function RentalPoweringBusiness() {
         </div>
 
         {/* Right Content */}
-        <div className="relative w-full h-[500px] flex items-center justify-center lg:justify-end">
+        <div className="relative w-full h-[350px] sm:h-[450px] md:h-[500px] flex flex-col items-center justify-center lg:justify-end">
           
           {/* Background Text */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 -z-10 w-full overflow-hidden flex items-center">
-             <span className="text-[100px] sm:text-[140px] md:text-[160px] lg:text-[220px] font-black text-[#f1edd9] leading-none tracking-tighter w-full text-center lg:text-left select-none">
+             <span className="text-[70px] sm:text-[120px] md:text-[140px] lg:text-[220px] font-black text-[#f1edd9] leading-none tracking-tighter w-full text-center lg:text-left select-none uppercase">
                {activeTab.bgText}
              </span>
           </div>
@@ -98,7 +98,7 @@ export default function RentalPoweringBusiness() {
           </div>
 
           {/* Navigation Tabs - below image on mobile, absolute on desktop */}
-          <div className="flex flex-row flex-wrap gap-3 mt-4 lg:hidden">
+          <div className="flex flex-row flex-wrap justify-center gap-2 mt-auto pb-4 lg:hidden z-20">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
