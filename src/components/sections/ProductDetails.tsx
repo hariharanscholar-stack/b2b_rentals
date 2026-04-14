@@ -303,7 +303,7 @@ export default function ProductDetails({ initialProduct, allProducts = [] }: { i
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.slice(0, 4).map((p, index) => (
+          {allProducts.slice(0, 4).map((p, index) => (
              <Link href={`/rental/${p.id}`} key={p.id + "-" + index} className="group cursor-pointer flex flex-col">
               <div className="relative aspect-square bg-[#f5f5f5] rounded-[24px] mb-4 flex items-center justify-center p-6 transition-transform duration-300 hover:-translate-y-1">
                 {p.isNew && (
