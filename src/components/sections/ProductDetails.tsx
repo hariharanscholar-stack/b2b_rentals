@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, CheckCircle2, ChevronDown, ChevronUp, ArrowUpRight, X, Check } from "lucide-react";
 export default function ProductDetails({ initialProduct, allProducts = [] }: { initialProduct: any, allProducts?: any[] }) {
   const product = initialProduct;
+  const productId = product.id;
 
   const [activeTonnage, setActiveTonnage] = useState<number | undefined>(product?.tonnages?.[0]);
   const [activePower, setActivePower] = useState<string | undefined>(product?.powers?.[0]);
